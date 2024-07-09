@@ -1,1 +1,1 @@
---asset-pipeline=propshaft --css=tailwind --database=postgresql --javascript=importmap
+--asset-pipeline=propshaft --css tailwind --database=postgresql --javascript=importmap
