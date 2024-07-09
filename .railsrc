@@ -1,1 +1,1 @@
--a propshaft -c tailwind -d postgresql
+--asset-pipeline=propshaft --css=tailwind --database=postgresql --javascript=importmap
