@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+require "fileutils"
+
+# Check if the user passed an argument to the script
+if ARGV.empty?
+  puts "Please provide a theme name"
+  exit
+end
+
+# Find the folder in /themes based on the argument passed to the script
+theme = ARGV[0]
+theme_folder = File.join("themes", theme)
+
+# Check if the folder exists
+unless File.directory?(theme_folder)
+  puts "Theme not found"
+  exit
+end
+
+# Create a zip file of the theme and store it in /themes
+FileUtils.cd("themes") do
+  `zip -r #{theme}.zip #{theme}`
+end
