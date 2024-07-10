@@ -1,7 +1,18 @@
 <%= render "shared/header" %>
+
   <h1><%= @page.title %></h1>
   
-  <img src="https://github.com/pandacms/.github/raw/main/images/panda-transparent-small.png?raw=true" alt="Panda">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="prose prose-slate mx-auto text-gray-500 lg:col-start-1 lg:row-start-1 lg:max-w-none">
+      <%= render PandaCms::RichTextComponent.new(key: :introduction_text) %>
+    </div>
+    <img src="https://github.com/pandacms/.github/raw/main/images/panda-transparent-small.png?raw=true" alt="Panda">
+  </div>
   
+  <div class="prose prose-slate mx-auto text-gray-500 lg:col-start-1 lg:row-start-1 lg:max-w-none">
+    <%= render PandaCms::RichTextComponent.new(key: :main_content) %>
+  </div>
+
   <%= yield %>
+  
 <%= render "shared/footer" %>

@@ -14,5 +14,5 @@ This repository contains our generators and template files used for a basic setu
 To use the generator, call (where **demo** is the name of your new application):
 
 ```
-rails new demo $(curl -fsSL https://raw.githubusercontent.com/pandacms/generator/main/.railsrc) -m $(curl -fsSL https://raw.githubusercontent.com/pandacms/generator/main/template.rb)
+rails new demo $(curl -fsSL https://raw.githubusercontent.com/pandacms/generator/main/.railsrc) -m https://raw.githubusercontent.com/pandacms/generator/main/template.rb
 ```
