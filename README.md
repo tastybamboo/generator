@@ -7,3 +7,12 @@ This repository contains our generators and template files used for a basic setu
 ## Installation Files
 
 * `.railsrc` defaults to using Propshaft for assets, Tailwind CSS as a CSS framework, and PostgreSQL as a database. This is our standard (and most-tested) approach for running Panda CMS.
+* `template.rb` adds Panda CMS and a basic theme (`plain24`) using Tailwind CSS.
+
+# Usage
+
+To use the generator, call (where **demo** is the name of your new application):
+
+```
+rails new demo $(curl -fsSL https://raw.githubusercontent.com/pandacms/generator/main/.railsrc) -m $(curl -fsSL https://raw.githubusercontent.com/pandacms/generator/main/template.rb)
+```
