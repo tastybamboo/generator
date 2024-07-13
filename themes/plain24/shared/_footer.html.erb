@@ -1,4 +1,12 @@
     </div>
 
+    <nav class="text-center mx-auto">
+      <%= render PandaCms::MenuComponent.new(name: "Footer Menu", item_styles: "inline-block block text-sm text-gray-400 hover:text-gray-800 hover:underline mx-4") %>
+    </nav>
+
+    <footer class="mt-4 mb-4 text-center text-gray-400 text-sm">
+      <p>&copy; <%= Time.now.year %> <%= PandaCms.title %> &middot; Powered by 🐼 <a href="https://pandacms.io">Panda CMS</a></p>
+    </footer>
+
   </body>
 </html>

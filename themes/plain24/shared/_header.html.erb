@@ -9,11 +9,10 @@
     <script async src="https://ga.jspm.io/npm:es-module-shims@1.10.0/dist/es-module-shims.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <%# TODO: Editable... %>
     <%= yield :head_includes %>
   </head>
 
-  <body class="h-full bg-zinc-50 dark:bg-black">
+  <body class="h-full bg-zinc-50">
     <div class="p-6 lg:p-12">
 
       <header class="flex justify-between items-center">
@@ -23,9 +22,7 @@
         </div>
         
         <nav class="mb-4">
-        <% PandaCms::Menu.find_by(name: "Main Menu").menu_items.each do |menu_item| %>
-          <a href="<%= menu_item.page.path %>" class="inline-block mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-brand-text hover:bg-brand-light"><%= menu_item.text %></a>
-        <% end %>
+          <%= render PandaCms::MenuComponent.new(name: "Main Menu", item_styles: "inline-block mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-brand-text hover:bg-brand-light") %>
         </nav>
       </header>
 

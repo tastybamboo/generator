@@ -8,8 +8,6 @@ add_source "https://rubygems.pkg.github.com/pandacms" do
   gem "panda_cms"
 end
 
-# We're vaguely opinionated, so let's assume people want nice code... 🎋
-gem "standard", group: [:development, :test]
 
 # Choose a test framework
 test_framework = "minitest"
@@ -18,9 +16,15 @@ if yes?("Do you want to replace minitest with rspec?")
   test_framework = "rspec"
   gem_group :development, :test do
     gem "rspec-rails"
+    gem "standard"
   end
 
   run "rm -rf test"
+else
+  # We're vaguely opinionated, so let's assume people want nice code... 🎋
+  gem_group :development, :test do
+    gem "standard"
+  end
 end
 
 # Download the theme and extract it into app/views
