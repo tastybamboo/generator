@@ -1,13 +1,7 @@
 require "open-uri"
 require "zip"
 
-# TODO: This works whilst the gem is in development, but
-# will need to be updated when released to:
-# gem "panda_cms"
-add_source "https://rubygems.pkg.github.com/pandacms" do
-  gem "panda_cms"
-end
-
+gem "panda_cms"
 
 # Choose a test framework
 test_framework = "minitest"
