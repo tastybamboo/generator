@@ -1,7 +1,7 @@
 require "open-uri"
 require "zip"
 
-gem "panda_cms"
+gem "panda-cms"
 
 # Choose a test framework
 test_framework = "minitest"
@@ -17,7 +17,7 @@ end
 
 # Download the theme and extract it into app/views
 theme = "plain24"
-theme_url = "https://github.com/pandacms/generator/raw/main/themes/#{theme}.zip"
+theme_url = "https://github.com/tastybamboo/generator/raw/main/themes/#{theme}.zip"
 puts "Downloading theme #{theme}..."
 URI.open(theme_url) do |file| # rubocop:disable Security/Open
   Zip::File.open_buffer(file) do |zip_file|
