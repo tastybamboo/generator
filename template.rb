@@ -31,7 +31,10 @@ run "bundle install"
 
 after_bundle do
   rails_command "generate rspec:install" if test_framework == "rspec"
-  rails_command "generate panda_cms:install"
+  rails_command "generate panda:core:install"
+  rails_command "generate panda:cms:install"
+  rails_command "panda:core:install:migrations"
+  rails_command "panda:cms:install:migrations"
   rails_command "db:create"
   rails_command "db:migrate"
   rails_command "db:seed"

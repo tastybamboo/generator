@@ -1,0 +1,9 @@
+<%= render "shared/header" %>
+
+  <div class="prose prose-slate mx-auto text-gray-500 lg:col-start-1 lg:row-start-1 lg:max-w-none">
+    <%= render Panda::CMS::RichTextComponent.new(key: :main_content) %>
+  </div>
+
+  <%= yield %>
+  
+<%= render "shared/footer" %>
