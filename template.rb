@@ -33,8 +33,7 @@ after_bundle do
   rails_command "generate rspec:install" if test_framework == "rspec"
   rails_command "generate panda:core:install"
   rails_command "generate panda:cms:install"
-  rails_command "panda:core:install:migrations"
-  rails_command "panda:cms:install:migrations"
+  run "bundle install" # Install omniauth-github added by the CMS generator
   rails_command "db:create"
   rails_command "db:migrate"
   rails_command "db:seed"
